@@ -13,5 +13,6 @@ sources += configure_file(output : 'config.cpp', input : 'config.cpp.in',
   'maintainer' : maintainer,
 })
 
-static_lib = static_library(meson.project_name(), sources, include_directories : includes, install: true, dependencies: module_deps)
-shared_lib = shared_library(meson.project_name(), sources, include_directories : includes, install: true, dependencies: module_deps)
+static_lib = static_library(meson.project_name(), sources, dependencies: module_deps)
+exe = executable(meson.project_name(), 'main.cpp', link_with : static_lib, install : true, dependencies : module_deps)
+run_target('run', command : [exe] + get_option('run_args'), depends : exe)
