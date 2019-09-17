@@ -20,8 +20,8 @@ endforeach
 subdir('src')
 subdir('test')
 
-cppcheck = custom_target('cppcheck_internal',
-  output : 'cppcheck.log',
+cppcheck = custom_target(meson.project_name() + '_cppcheck_internal',
+  output : meson.project_name() + '_cppcheck.log',
   input : sources + test_files,
   command : [
     'cppcheck',
@@ -30,7 +30,7 @@ cppcheck = custom_target('cppcheck_internal',
     '-I', meson.current_source_dir() / 'src',
     '@INPUT@',
 #   '--project=compile_commands.json',
-    '--output-file=cppcheck.log'
+    '--output-file=@OUTPUT@'
 ])
 
-run_target('cppcheck', command : ['cat', meson.current_build_dir() / 'cppcheck.log'], depends : cppcheck)
+run_target('cppcheck', command : ['cat', cppcheck.full_path()], depends : cppcheck)
