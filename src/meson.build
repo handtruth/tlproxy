@@ -1,5 +1,7 @@
 sources = files([
-  'sample_source.cpp'
+  'portal.cpp',
+  'sock_specs.cpp',
+  'shadow.cpp'
 ])
 
 src = include_directories('.')

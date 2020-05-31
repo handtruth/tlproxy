@@ -1,0 +1,3 @@
+[submodule "ekutils"]
+	path = subprojects/ekutils
+	url = ../ekutils.git

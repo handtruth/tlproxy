@@ -1,5 +1,5 @@
 test_names = [
-  'sample_test'
+  
 ]
 
 test_files = []
