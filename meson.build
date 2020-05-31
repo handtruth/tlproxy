@@ -3,8 +3,8 @@ project('tlproxy', 'cpp',
   default_options : ['warning_level=3',
                      'cpp_std=c++17'])
 
-group = 'com.handtruth'
-maintainer = 'someone <someone@handtruth.com>'
+group = 'com.handtruth.internal'
+maintainer = 'ktlo <ktlo@handtruth.com>'
 
 modules = [
   'ekutils'

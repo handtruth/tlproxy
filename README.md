@@ -6,7 +6,7 @@ This is a small single thread multiclient TCP and UNIX proxy.
 How to use it?
 ----------------------
 
-### 2. As Independent Program
+### 1. As Independent Program
 
 ```sh
 tlproxy <local> <remote>
@@ -22,7 +22,7 @@ tlproxy tcp::1337 unix:/var/run/docker.sock
 
 Command above will create a TCP server at 127.0.0.1:1337 that redirects any connection to `/var/run/docker.sock` socket.
 
-### 3. As Docker Container
+### 2. As Docker Container
 
 ```sh
 docker run -p 25564:25564 handtruth/tlproxy tcp:0.0.0.0:25564 tcp:example.com:25565
