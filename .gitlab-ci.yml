@@ -6,6 +6,7 @@ stages:
   - test
   - analysis
   - package
+  - image
 
 variables:
   GIT_SUBMODULE_STRATEGY: normal
