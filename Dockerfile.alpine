@@ -1,0 +1,5 @@
+FROM alpine:latest
+RUN [ "apk", "--no-cache", "--no-progress", "add", "libstdc++" ]
+COPY /dist/x86_64-alpine-linux-musl/bin/tlproxy /usr/local/bin/tlproxy
+LABEL maintainer="ktlo <ktlo@handtruth.com>"
+ENTRYPOINT [ "tlproxy" ]
