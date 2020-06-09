@@ -11,6 +11,8 @@ int connection_counter;
 void gate::send() {
 	try {
 		int sent = stream->write(input.data(), input.size());
+		if (sent == -1)
+			return;
 		input.move(sent);
 	} catch (const std::system_error & e) {
 		if (std::errc(e.code().value()) == std::errc::broken_pipe)

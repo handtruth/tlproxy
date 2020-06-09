@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
 		std::cerr << "required exactly 2 arguments" << std::endl;
 		return 1;
 	}
-	ekutils::log = new ekutils::stdout_log(ekutils::log_level::debug);
+	ekutils::log = new ekutils::stdout_log(ekutils::log_level::info);
 	try {
 		signal(SIGPIPE, SIG_IGN);
 		sock_specs src(argv[1]);
